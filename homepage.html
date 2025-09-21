@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeton Clone</title>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navbar / Header -->
+    <header class="absolute top-0 left-0 w-full z-20">
+      <nav class="flex items-center justify-between px-4 sm:px-6 py-4">
+        <!-- Logo -->
+        <div class="text-4xl font-bold text-white">Jeton</div>
+        <!-- Menu -->
+        <div class="flex gap-2 sm:gap-4">
+          <button
+            class="px-4 py-2 text-white bg-white/20 rounded-lg hover:bg-white/40 transition"
+          >
+            Log in
+          </button>
+          <button
+            class="px-4 py-2 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition"
+          >
+            Sign up
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Content -->
+    <div
+      class="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-8 md:px-20 bg-gradient-to-r from-orange-600 to-pink-500"
+    >
+      <!-- Left Text -->
+      <div class="text-center md:text-left max-w-xl fade-in">
+        <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+          One app <br />
+          for all needs
+        </h1>
+      </div>
+      <!-- Right Side -->
+      <div class="mt-10 md:mt-0 slide-up">
+        <p class="text-lg text-white mb-6 text-center md:text-left">
+          Single account for all your payments.
+        </p>
+        <!-- Store Buttons -->
+        <div class="flex flex-col space-y-4 w-48 mx-auto md:mx-0">
+          <!-- App Store -->
+          <a
+            href="#"
+            class="flex items-center justify-center space-x-2 bg-white text-black px-5 py-3 rounded-xl hover:bg-gray-200 transition"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+              alt="App Store"
+              class="w-5 h-5"
+            />
+            <span class="text-sm md:text-base"
+              >Download on the <br /><span class="font-semibold"
+                >App Store</span
+              ></span
+            >
+          </a>
+          <!-- Google Play -->
+          <a
+            href="#"
+            class="flex items-center justify-center space-x-2 bg-white text-black px-5 py-3 rounded-xl hover:bg-gray-200 transition"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              class="w-6 h-6"
+            />
+            <span class="text-sm md:text-base"
+              >Get it on <br /><span class="font-semibold"
+                >Google Play</span
+              ></span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Section: Unify your finances -->
+    <section id="unify" class="py-11 bg-white">
+      <div class="container mx-auto px-6 md:px-20">
+        <!-- Heading -->
+        <div id="unify-heading" class="text-center">
+          <h2
+            class="text-4xl md:text-6xl lg:text-[110px] font-extrabold text-orange-600 tracking-tight leading-tight"
+          >
+            Unify your finances
+          </h2>
+        </div>
+        <!-- Cards -->
+        <div
+          id="unify-cards"
+          class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center"
+        >
+          <div class="card">
+            <img src="img/one.png" alt="Card 1" class="w-32 md:w-40" />
+          </div>
+          <div class="card">
+            <img src="img/two.png" alt="Card 2" class="w-32 md:w-40" />
+          </div>
+          <div class="card">
+            <img src="img/three.png" alt="Card 3" class="w-32 md:w-40" />
+          </div>
+          <div class="card">
+            <img src="img/four.png" alt="Card 4" class="w-32 md:w-40" />
+          </div>
+          <div class="card">
+            <img src="img/five.png" alt="Card 5" class="w-32 md:w-40" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Add, Send, Exchage Image -->
+    <section id="send-exchange">
+      <div class="container mx-auto px-6 md:px-20 se-container">
+        <!-- Add Image -->
+        <div class="se-block">
+          <img src="img/add.PNG" alt="Add" />
+        </div>
+        <!-- Exchange Image -->
+        <div class="se-block">
+          <img src="img/send.PNG" alt="Send" />
+        </div>
+        <!-- Exchange Image -->
+        <div class="se-block">
+          <img src="img/Capture.PNG" alt="Exchange" />
+        </div>
+      </div>
+    </section>
+    <!-- Section: All your finances, in one app -->
+    <section
+      class="relative w-full h-[140vh] flex items-center overflow-hidden"
+    >
+      <!-- Background Video -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <!-- Agar file same folder me hai -->
+        <source src="img/jeton-3dapp-mobile.mp4" type="video/mp4" />
+        <!-- Agar img/ folder me hai -->
+        <!-- <source src="img/jeton-3dapp-mobile.mp4" type="video/mp4" /> -->
+        Your browser does not support the video tag.
+      </video>
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/10"></div>
+      <!-- Content -->
+      <div
+        class="relative z-10 container mx-auto px-6 md:px-2 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+      >
+        <!-- Left Side Text -->
+        <div class="text-left text-white space-y-6">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            All your finances, <br />
+            in one app.
+          </h1>
+          <p class="text-lg md:text-xl opacity-90">
+            Join 1M+ happy users today.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="px-6 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
+          <!-- Store Buttons -->
+          <div class="flex space-x-4 mt-6">
+            <!-- Google Play Button -->
+            <a
+              href="#"
+              class="border-2 border-white rounded-lg p-2 hover:bg-white/10 transition"
+            >
+              <img
+                src="https://www.jeton.com/images/app-button/google-play-neutral.svg"
+                alt="Google Play"
+                class="h-12"
+              />
+            </a>
+            <!-- App Store Button -->
+            <a
+              href="#"
+              class="border-2 border-white rounded-lg p-2 hover:bg-white/10 transition"
+            >
+              <img
+                src="https://www.jeton.com/images/app-button/app-store-neutral.svg"
+                alt="App Store"
+                class="h-12"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Jeton Card -->
+    <section
+      class="py-16 bg-white flex flex-col items-center justify-center text-center"
+    >
+      <!-- Heading -->
+      <h2
+        class="jeton-heading text-4xl md:text-6xl mb-6 md:mb-10 px-4 font-bold text-orange-500 leading-snug"
+      >
+        Contactless payments? Sure. <br />
+        Spending limits? Check. <br />
+        Card freezing? Also check.
+      </h2>
+      <!-- Video + Text + CTA -->
+      <div class="w-full md:w-4/5 max-w-4xl px-4 flex flex-col items-center">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-full h-auto aspect-[9/16] md:aspect-[16/9] rounded-3xl shadow-xl object-cover mb-6 md:mb-10"
+        >
+          <source
+            src="https://jetonbucket.fra1.cdn.digitaloceanspaces.com/jeton/2024-10-16T16-25-50.395Z-jeton-card-mobile.mp4#t=0.01"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        <p
+          class="jeton-heading text-3xl md:text-5xl mb-6 md:mb-10 px-4 font-bold text-orange-500 leading-snug"
+        >
+          Jeton Card: Your Go-To for Every Purchase
+        </p>
+
+        <a
+          href="https://jeton.com"
+          target="_blank"
+          class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+        >
+          Learn more
+        </a>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section
+      class="relative w-full py-32 min-h-screen flex justify-center items-center"
+    >
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img
+          src="https://www.jeton.com/_ipx/f_webp&q_80&w_3400/cms/b7c674ecd0ee69b2eca20443cac6272c550ed396-4000x2667.jpg"
+          alt="Clients Background"
+          class="w-full h-full object-cover brightness-75"
+        />
+      </div>
+
+      <!-- Overlay Content -->
+      <div class="relative max-w-md w-full px-4 space-y-8">
+        <!-- Card 1 -->
+        <div
+          class="client-card bg-gray-800 bg-opacity-80 rounded-2xl p-6 text-white shadow-lg opacity-0 translate-y-16"
+        >
+          <p class="font-semibold mb-2">Recommended</p>
+          <p class="mb-4 text-sm">
+            Very happy with the app. Does what it says, simple payments and
+            transactions. Quick account verification and withdrawals. 24/7
+            support available.
+          </p>
+          <div class="flex items-center mt-4 gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-green-400 flex items-center justify-center font-bold text-gray-900"
+            >
+              VK
+            </div>
+            <div>
+              <p class="font-semibold text-sm">Vamsi K.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="client-card bg-gray-700 bg-opacity-80 rounded-2xl p-6 text-white shadow-lg opacity-0 translate-y-16"
+        >
+          <p class="font-semibold mb-2">Awesome app very user friendly</p>
+          <p class="mb-4 text-sm">
+            Would highly recommend Jeton to my friends.
+          </p>
+          <div class="flex items-center mt-4 gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-purple-400 flex items-center justify-center font-bold text-gray-900"
+            >
+              LA
+            </div>
+            <div>
+              <p class="font-semibold text-sm">Leonie A.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="client-card bg-gray-600 bg-opacity-80 rounded-2xl p-6 text-white shadow-lg opacity-0 translate-y-16"
+        >
+          <p class="font-semibold mb-2">
+            The best payment solution for German customers
+          </p>
+          <p class="mb-4 text-sm">
+            I've been a Jeton user for a few years! The support was always great
+            and I'm always able to make my payments to the websites I want with
+            no problem.
+          </p>
+          <div class="flex items-center mt-4 gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-yellow-300 flex items-center justify-center font-bold text-gray-900"
+            >
+              KR
+            </div>
+            <div>
+              <p class="font-semibold text-sm">Karl R.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="client-card bg-gray-500 bg-opacity-80 rounded-2xl p-6 text-white shadow-lg opacity-0 translate-y-16"
+        >
+          <p class="font-semibold mb-2">Easy and Fast</p>
+          <p class="mb-4 text-sm">
+            Great app for fast and easy transfers. I have been using Jeton for a
+            while now without any problem. I have recently started using their
+            Jeton Card for my everyday purchases too.
+          </p>
+          <div class="flex items-center mt-4 gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-pink-400 flex items-center justify-center font-bold text-gray-900"
+            >
+              DP
+            </div>
+            <div>
+              <p class="font-semibold text-sm">Dennis P.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: 1 million users -->
+    <section
+      id="users-section"
+      class="relative py-24 text-center transition-colors duration-700"
+    >
+      <div class="container mx-auto px-6 md:px-20">
+        <!-- Heading -->
+        <h2
+          id="users-heading"
+          class="text-4xl md:text-6xl font-bold leading-tight mb-6"
+        >
+          1 million users, <br class="hidden md:block" />
+          plus you.
+        </h2>
+
+        <!-- Sub Text -->
+        <p id="users-subtext" class="text-lg md:text-xl mb-8">
+          It only takes a few seconds to get started.
+        </p>
+
+        <!-- Buttons -->
+        <div
+          id="users-buttons"
+          class="flex flex-col md:flex-row justify-center gap-4"
+        >
+          <a href="#">
+            <img
+              src="https://www.jeton.com/images/app-button/google-play-orange.svg"
+              class="px-6 py-3 bg-white rounded-xl border-2 border-white hover:bg-gray-100 transition shadow-lg"
+              alt="Google Play"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://www.jeton.com/images/app-button/app-store-orange.svg"
+              class="px-6 py-3 bg-white rounded-xl border-2 border-white hover:bg-gray-100 transition shadow-lg"
+              alt="App Store"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-orange-600 pt-16">
+      <div class="container mx-auto px-6 md:px-20">
+        <!-- Footer Links -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm"
+        >
+          <div>
+            <h4 class="font-semibold mb-4">Get Started</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Sign up</a></li>
+              <li><a href="#" class="hover:underline">Login</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Discover</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Jeton Card</a></li>
+              <li><a href="#" class="hover:underline">Fees</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">About</a></li>
+              <li><a href="#" class="hover:underline">Newsroom</a></li>
+              <li><a href="#" class="hover:underline">Partnerships</a></li>
+              <li><a href="#" class="hover:underline">Media Assets</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Cookie Policy</a></li>
+              <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li><a href="#" class="hover:underline">Disclaimers</a></li>
+              <li><a href="#" class="hover:underline">AML Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Help</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Developers</a></li>
+              <li><a href="#" class="hover:underline">FAQ</a></li>
+              <li><a href="#" class="hover:underline">Support</a></li>
+              <li><a href="#" class="hover:underline">Release Notes</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Store Buttons + Trust Logos + Social -->
+        <div
+          class="flex flex-col md:flex-row items-center justify-between mt-12 mb-4 gap-6"
+        >
+          <!-- Store Buttons -->
+          <div class="flex space-x-4">
+            <a href="#">
+              <img
+                src="https://www.jeton.com/images/app-button/google-play-orange.svg"
+                class="h-11 border-2 border-orange-600 rounded-lg p-2 hover:bg-orange-600/10 transition"
+                alt="Google Play"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="https://www.jeton.com/images/app-button/app-store-orange.svg"
+                class="h-11 border-2 border-orange-600 rounded-lg p-2 hover:bg-orange-600/10 transition"
+                alt="App Store"
+              />
+            </a>
+          </div>
+
+          <!-- Trust Logos -->
+          <div class="flex flex-wrap justify-center space-x-6">
+            <img
+              src="https://www.jeton.com/_ipx/f_webp&q_90&s_102x128/cms/1151125d455608ae69070fdd56e5a71365f3e17e-192x240.png"
+              class="h-7"
+              alt="ISO"
+            />
+            <img
+              src="https://www.jeton.com/_ipx/f_webp&q_90&s_117x128/cms/091df0f4e5a50b54d7c480f4c4316e7cbb874404-220x240.png"
+              class="h-7"
+              alt="ISO"
+            />
+            <img
+              src="https://www.jeton.com/_ipx/f_webp&q_90&s_128x128/cms/1131d43c022f9f24598b699500ad3d2f0880c5ee-321x320.png"
+              class="h-7"
+              alt="ISO"
+            />
+            <img
+              src="https://www.jeton.com/_ipx/f_webp&q_90&s_491x128/cms/3ce8e871cd751b791d212f21d8313855c7485df7-1071x279.png"
+              class="h-7"
+              alt="ISO"
+            />
+            <img
+              src="https://www.jeton.com/_ipx/f_webp&q_90&s_591x128/cms/8ce6366b851312add1e09a4a75e4e64281c89831-1280x277.png"
+              class="h-7"
+              alt="ABE EBA"
+            />
+          </div>
+
+          <!-- Social Media -->
+          <div class="flex space-x-4 text-orange-600">
+            <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="#"><i class="fab fa-x-twitter text-2xl"></i></a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-gray-200" />
+      </div>
+    </footer>
+
+    <!-- Extra Section Below Footer -->
+    <div
+      class="container mx-auto px-6 md:px-20 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8"
+    >
+      <!-- Image 1 -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+        <img
+          src="img/six.jpg"
+          alt="West Ham United"
+          class="w-full h-72 md:h-96 object-cover transform group-hover:scale-105 transition duration-500"
+        />
+        <div
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6"
+        >
+          <div class="flex items-center space-x-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg"
+              class="w-10 h-10"
+              alt="West Ham Logo"
+            />
+            <div>
+              <p class="text-sm text-gray-300">Official Partner of</p>
+              <h3 class="text-white font-bold text-lg">West Ham United F.C.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+        <img
+          src="img/seven.jpg"
+          alt="Brand Ambassadors"
+          class="w-full h-72 md:h-96 object-cover transform group-hover:scale-105 transition duration-500"
+        />
+        <div
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6"
+        >
+          <div>
+            <p class="text-sm text-gray-300">
+              Online Payments Brand Ambassadors
+            </p>
+            <h3 class="text-white font-bold text-lg">
+              Alexis Mac Allister & Kou Itakura
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fixed Bottom Navigation -->
+    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+      <!-- Desktop Menu -->
+      <div
+        class="hidden md:flex items-center space-x-6 bg-orange-600 text-white px-6 py-3 rounded-full shadow-lg relative"
+      >
+        <!-- Home Icon -->
+        <a href="#" class="flex items-center hover:underline">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Personal Dropdown -->
+        <div class="relative group">
+          <button class="hover:underline flex items-center">
+            Personal <i class="fa-solid fa-caret-down ml-1"></i>
+          </button>
+          <div
+            class="absolute left-0 bottom-full mb-2 bg-orange-600 text-white rounded-lg shadow-lg hidden group-hover:flex flex-col w-[200px] transition-all duration-300"
+          >
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">Wallet</a>
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">Cards</a>
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">Payments</a>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <a href="#" class="hover:underline">Business ↗</a>
+
+        <!-- Company Dropdown -->
+        <div class="relative group">
+          <button class="hover:underline flex items-center">
+            Company <i class="fa-solid fa-caret-down ml-1"></i>
+          </button>
+          <div
+            class="absolute left-0 bottom-full mb-2 bg-orange-600 text-white rounded-lg shadow-lg hidden group-hover:flex flex-col w-[200px] transition-all duration-300"
+          >
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">About Us</a>
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">Careers</a>
+            <a href="#" class="block px-6 py-2 hover:bg-orange-500">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden flex items-center bg-orange-600 text-white px-6 py-3 rounded-full shadow-lg space-x-2 cursor-pointer"
+        id="mobileMenuBtn"
+      >
+        <span>Menu</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        class="hidden md:hidden flex-col bg-orange-600 text-white rounded-lg shadow-lg mt-2 space-y-2 p-4 w-48 mx-auto"
+        id="mobileMenu"
+      >
+        <a href="#" class="block px-2 py-2 hover:bg-orange-500 rounded">Home</a>
+        <div>
+          <button
+            class="w-full text-left flex justify-between items-center px-2 py-2 hover:bg-orange-500 rounded"
+            id="personalBtn"
+          >
+            Personal <i class="fa-solid fa-caret-down ml-1"></i>
+          </button>
+          <div class="hidden flex-col mt-1 ml-2 space-y-1" id="personalMenu">
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >Wallet</a
+            >
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >Cards</a
+            >
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >Payments</a
+            >
+          </div>
+        </div>
+        <a href="#" class="block px-2 py-2 hover:bg-orange-500 rounded"
+          >Business ↗</a
+        >
+        <div>
+          <button
+            class="w-full text-left flex justify-between items-center px-2 py-2 hover:bg-orange-500 rounded"
+            id="companyBtn"
+          >
+            Company <i class="fa-solid fa-caret-down ml-1"></i>
+          </button>
+          <div class="hidden flex-col mt-1 ml-2 space-y-1" id="companyMenu">
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >About Us</a
+            >
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >Careers</a
+            >
+            <a href="#" class="block px-2 py-1 hover:bg-orange-500 rounded"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
